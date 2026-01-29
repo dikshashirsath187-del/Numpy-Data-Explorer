@@ -107,39 +107,6 @@ The notebook provides 13 sections:
 12. Data Quality Check
 13. Summary and Insights
 
-## 📝 Example Code
-
-### Using the HappinessAnalyzer Class
-
-```python
-from happiness_analyzer import HappinessAnalyzer
-
-# Initialize the analyzer
-analyzer = HappinessAnalyzer('WHR20_DataForFigure2.1.csv')
-
-# Get basic statistics
-stats = analyzer.get_basic_statistics('Ladder score')
-print(f"Mean happiness: {stats['mean']:.3f}")
-
-# Get top 10 countries
-top_countries = analyzer.get_top_countries('Ladder score', n=10)
-for country, score in top_countries:
-    print(f"{country}: {score:.3f}")
-
-# Compare regions
-regional_stats = analyzer.compare_regions('Ladder score')
-for region, stats in regional_stats.items():
-    print(f"{region}: {stats['mean']:.3f}")
-
-# Get country profile
-india_data = analyzer.get_country_data('India')
-print(india_data)
-
-# Find correlations
-factors = ['Logged GDP per capita', 'Social support', 
-           'Healthy life expectancy', 'Freedom to make life choices']
-corr_matrix = analyzer.get_correlation_matrix(factors)
-```
 
 ## 📊 Key Findings
 
